@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "goit-react-hw-05-movies",
+  "name": "goit-react-hw-05-movies",
   "icons": [
     {
       "src": "favicon.ico",
