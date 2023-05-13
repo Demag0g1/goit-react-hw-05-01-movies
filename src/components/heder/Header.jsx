@@ -1,20 +1,36 @@
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: #fff5f5;
+
+  &.active {
+    color: orange;
+  }
+`;
 
 const Header = () => {
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
       <div className="container-fluid">
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNavAltMarkup"
+        >
           <div className="navbar-nav">
-            <NavLink className="nav-item nav-link text-white-solid " to="/">
+            <StyledLink
+              className="nav-item nav-link text-white-solid "
+              to="/"
+              end
+            >
               Home
-            </NavLink>
-            <NavLink
+            </StyledLink>
+            <StyledLink
               className="nav-item nav-link text-white-solid "
               to="/movies"
             >
               Movies
-            </NavLink>
+            </StyledLink>
           </div>
         </div>
       </div>
