@@ -1,24 +1,19 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import { navbar } from 'bootstrap';
 
-const Header = ({ showModal }) => {
+const Header = () => {
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
       <div className="container-fluid">
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <NavLink className="nav-item nav-link text-white" to="/">
+            <NavLink className="nav-item nav-link text-white-solid " to="/">
               Home
             </NavLink>
-            <NavLink className="nav-item nav-link text-white" to="/movies">
-              Movies
-            </NavLink>
             <NavLink
-              className="nav-item nav-link text-white"
-              to="/movies/:movieId"
+              className="nav-item nav-link text-white-solid "
+              to="/movies"
             >
-              MovieDetails
+              Movies
             </NavLink>
           </div>
         </div>
