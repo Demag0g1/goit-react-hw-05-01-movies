@@ -1,50 +1,42 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { fetchTrend } from '../api/Api';
+import ListMovies from '../listmovies/ListMovies';
+import Loader from 'components/loader/Loader';
 
 const Home = () => {
-  const [movies, setMovies] = useState([]);
+  const [trendMovies, setTrendMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://api.themoviedb.org/3/trending/all/day',
-      params: {
-        language: 'en-US',
-        page: 1,
-        api_key: '6f70f7d8034c486bbf0597ae252bbef6',
-      },
-      headers: {
-        accept: 'application/json',
-        Authorization:
-          'Bearer 6f70f7d8034c486bbf0597ae252bbef6',
-      },
+    const fetchTrending = async () => {
+      try {
+        setError(false);
+        setIsLoading(true);
+        const { results } = await fetchTrend();
+        setTrendMovies(results);
+      } catch (error) {
+        setError(true);
+      } finally {
+        setIsLoading(false);
+      }
     };
-    axios
-      .request(options)
-      .then(function (res) {
-        console.log(res.data);
-        const newMovies = res.data.results;
 
-        setMovies(newMovies);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    fetchTrending();
   }, []);
 
   return (
     <>
-      <h1>Trending Today</h1>
-      <ol>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>
-              {movie.title || movie.name}
-            </Link>
-          </li>
-        ))}
-      </ol>
+      {isLoading ? (
+        <Loader />
+      ) : error ? (
+        <p>
+          Sorry, we could not fetch the trending movies.
+          Please try again later.
+        </p>
+      ) : (
+        <ListMovies trendMovies={trendMovies} />
+      )}
     </>
   );
 };

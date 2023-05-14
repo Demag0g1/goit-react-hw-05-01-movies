@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    margin: 20px 20px;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.poster {
+    height: 300px;
+
+}
+
+.about {
+    padding-top: 15px;
+    max-width: 1200px;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.itemInfo {
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+.accentText {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.moreWrapper {
+    margin: 15px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ada4a4;
+    border-bottom: 1px solid #ada4a4;
+}
+
+.moreHeader {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.list {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLink {
+    font-size: 20px;
+    margin-right: 5px;
+    padding: 5px 15px;
+    border: 1px solid #08305e;
+    border-radius: 8px;
+    background-color: #0a51a1;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: blanchedalmond;
+
+    &:hover,
+    &:focus {
+        background-color: #240765;
+        color: #aaeaeb;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+}

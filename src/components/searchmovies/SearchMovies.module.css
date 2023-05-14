@@ -1,0 +1,34 @@
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input {
+    border: 1px solid #ada4a4;
+    border-radius: 12px;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 24px;
+    color: slateblue;
+}
+
+button {
+    background-color: #0a51a1;
+    border: 1px solid #08305e;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: blanchedalmond;
+    transition: background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        background-color: #240765;
+        color: #aaeaeb;
+    }
+}
