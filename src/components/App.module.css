@@ -1,6 +1,30 @@
 .App {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 16px;
-  padding-bottom: 24px;
+  grid-template-columns: 0.8fr;
+  grid-gap: 10px;
+  padding-bottom: 20px;
+
+}
+
+ul {
+
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+}
+
+li.active {
+  background-color: #f1f1f1;
+}
+
+li a {
+  margin-left: 10px;
+  display: block;
+  padding: 4px;
+  text-decoration: none;
+  color: #333;
+}
+
+li a:hover {
+  background-color: #f1f1f1;
 }
