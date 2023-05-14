@@ -28,7 +28,7 @@ const Header = () => {
             </StyledLink>
             <StyledLink
               className="nav-item nav-link "
-              to="/movies"
+              to="movies"
             >
               Movies
             </StyledLink>

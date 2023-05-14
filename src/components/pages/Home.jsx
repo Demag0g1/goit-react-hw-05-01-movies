@@ -39,7 +39,7 @@ const Home = () => {
       <ol>
         {movies.map(movie => (
           <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>
+            <Link to={`/movies/${movie.id}`}>
               {movie.title || movie.name}
             </Link>
           </li>

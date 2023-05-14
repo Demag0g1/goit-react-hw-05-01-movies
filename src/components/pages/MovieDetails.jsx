@@ -9,7 +9,7 @@ const MovieDetails = ({ match }) => {
   const [reviews, setReviews] = useState([]);
   const API_KEY = '6f70f7d8034c486bbf0597ae252bbef6';
   const id = match.params.id;
-
+  console.dir({ match });
   useEffect(() => {
     const options = {
       method: 'GET',
@@ -57,13 +57,13 @@ const MovieDetails = ({ match }) => {
     fetchCast();
     fetchReviews();
   }, [id]);
-
+  if (!movie) return null;
   return (
     <div>
       <h1>{movie.original_title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.original_title}
+        alt={`Poster for ${movie.original_title}`}
       />
       <p>{movie.overview}</p>
       <p>Release date: {movie.release_date}</p>
