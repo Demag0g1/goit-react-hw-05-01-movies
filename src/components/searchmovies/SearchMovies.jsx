@@ -18,14 +18,16 @@ const SearchMovies = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        name="query"
-        type="text"
-        placeholder="Search movies"
-      />
-      <button type="submit">Search...</button>
-    </form>
+    <div className="wrapper" style={{ margin: '20px' }}>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="query"
+          type="text"
+          placeholder="Search movies"
+        />
+        <button type="submit">Search...</button>
+      </form>
+    </div>
   );
 };
 

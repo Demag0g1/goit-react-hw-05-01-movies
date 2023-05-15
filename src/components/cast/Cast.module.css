@@ -1,66 +1,63 @@
-  .wrapper {
-      margin-top: 30px;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-bottom: 30px;
-  }
+.wrapper {
+    margin-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+}
 
-  .castHeader {
-      font-size: 24px;
-      font-weight: 600;
-      text-align: center;
-  }
+.castHeader {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
 
-  .castInfo {
-      margin-top: 35px;
-      max-width: 220px;
-  }
+.castInfo {
+    margin-top: 15px;
+    max-width: 220px;
+}
 
-  .castList {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
+.castList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 
-      padding: 0;
-      margin: 0;
+    padding: 0;
+    margin: 0;
 
-      gap: 30px;
+    gap: 15px;
+}
 
-  }
+.cast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 200px;
+}
 
-  .cast-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 200px;
+.cast-card img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 30%;
+}
 
-  }
+.castName {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
-  .cast-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 50%;
+.castInfo {
+    padding: 5px;
+    width: 20%;
+}
 
-  }
-
-  .castName {
-      margin-top: 10px;
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-      font-weight: bold;
-  }
-
-  .castInfo {
-      padding: 10px;
-      width: 20%;
-  }
-
-  .notFoundInfo {
-      margin: 30px auto 0 auto;
-      text-align: center;
-      padding: 20px;
-      background-color: #ada4a4;
-      border-radius: 5px;
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-      max-width: 500px;
-  }
+.notFoundInfo {
+    margin: 10px auto 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #ada4a4;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+}

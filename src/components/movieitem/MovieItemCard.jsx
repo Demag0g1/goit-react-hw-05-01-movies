@@ -1,7 +1,7 @@
 import { useLocation, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Loader from 'components/loader/Loader';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './MovieItemCard.module.css';
 
 const MovieItemCard = ({ movie }) => {
@@ -15,7 +15,8 @@ const MovieItemCard = ({ movie }) => {
   } = movie;
 
   const location = useLocation();
-  const [from, setFrom] = useState(location.pathname);
+  const [from] = useState(location.state?.from || '/');
+  const prevFrom = useRef(from);
 
   const releaseDate = new Date(release_date);
 
@@ -32,16 +33,12 @@ const MovieItemCard = ({ movie }) => {
     : 'Not rated';
 
   useEffect(() => {
-    if (location.state?.from) {
-      setFrom(location.state.from);
-    }
-  }, [location.state]);
-  console.log(location.state);
-  console.log(from);
+    prevFrom.current = from;
+  }, [from]);
+
   if (!title) {
     return <Loader />;
   }
-
   return (
     <>
       <div className={styles.container}>
@@ -80,13 +77,13 @@ const MovieItemCard = ({ movie }) => {
         <h3 className={styles.moreHeader}>
           Additional information
         </h3>
-
         <ul className={styles.list}>
           <li className={styles.listItem}>
             <NavLink
               className={styles.styledLink}
               to={{
-                pathname: from + '/cast',
+                pathname: `${location.pathname}/cast`,
+                state: { from: location },
               }}
             >
               Cast
@@ -97,8 +94,8 @@ const MovieItemCard = ({ movie }) => {
             <NavLink
               className={styles.styledLink}
               to={{
-                pathname: '/reviews',
-                state: { from },
+                pathname: `${location.pathname}/reviews`,
+                state: { from: location },
               }}
             >
               Reviews
