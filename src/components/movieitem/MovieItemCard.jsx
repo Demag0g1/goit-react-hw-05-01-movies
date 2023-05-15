@@ -15,7 +15,9 @@ const MovieItemCard = ({ movie }) => {
   } = movie;
 
   const location = useLocation();
-  const [from] = useState(location.state?.from || '/');
+  const [from] = useState(
+    location.state?.from ?? '/movies'
+  );
   const prevFrom = useRef(from);
 
   const releaseDate = new Date(release_date);
